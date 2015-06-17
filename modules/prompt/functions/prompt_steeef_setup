@@ -15,9 +15,9 @@
 function prompt_steeef_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c${_prompt_steeef_colors[4]}●%f)"
+    branch_format="on ${_prompt_steeef_colors[1]}%b%f%u%c${_prompt_steeef_colors[7]} ●%f"
   else
-    branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c)"
+    branch_format="on ${_prompt_steeef_colors[1]}%b%f%u%c"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -44,19 +44,23 @@ function prompt_steeef_setup {
   # Use extended color pallete if available.
   if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     _prompt_steeef_colors=(
-      "%F{81}"  # Turquoise
+      "%F{032}" # Blue
+      "%F{136}" # Yellow
       "%F{166}" # Orange
-      "%F{135}" # Purple
-      "%F{161}" # Hotpink
-      "%F{118}" # Limegreen
+      "%F{125}" # Magenta
+      "%F{064}" # Green
+      "%F{160}" # Red
+      "%F{037}" # Cyan
     )
   else
     _prompt_steeef_colors=(
-      "%F{cyan}"
+      "%F{blue}"
       "%F{yellow}"
+      "%F{orange}"
       "%F{magenta}"
-      "%F{red}"
       "%F{green}"
+      "%F{red}"
+      "%F{cyan}"
     )
   fi
 
@@ -69,8 +73,8 @@ function prompt_steeef_setup {
   #   %S - path in the repository
   local branch_format="(${_prompt_steeef_colors[1]}%b%f%u%c)"
   local action_format="(${_prompt_steeef_colors[5]}%a%f)"
-  local unstaged_format="${_prompt_steeef_colors[2]}●%f"
-  local staged_format="${_prompt_steeef_colors[5]}●%f"
+  local unstaged_format="${_prompt_steeef_colors[5]} ●%f"
+  local staged_format="${_prompt_steeef_colors[1]} ●%f"
 
   # Set vcs_info parameters.
   zstyle ':vcs_info:*' enable bzr git hg svn
