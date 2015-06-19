@@ -52,7 +52,7 @@ alias cp="${aliases[cp]:-cp}"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
 alias ln="${aliases[ln]:-ln} -i"
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
-alias mv="${aliases[mv]:-mv}"
+alias mv="${aliases[mv]:-mv} -i"
 alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
@@ -101,6 +101,13 @@ alias lt='ll -tr'        # Lists sorted by date, most recent last.
 alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 alias sl='ls'            # I often screw this up.
+
+alias lA='ls -lhAF'
+alias rr='rm -f -r -v'
+alias cr='cp -f -r -v'
+
+alias exusr='chmod u+x'           # give execute permissions to current user
+alias exall='chmod ugo+x'         # give execute permissions to all users
 
 # Grep
 if zstyle -t ':prezto:module:utility:grep' color; then
