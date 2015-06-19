@@ -27,6 +27,8 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'vi-emacs' \
+  'vim' \
   'history' \
   'directory' \
   'spectrum' \
@@ -37,6 +39,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'node' \
   'local' \
+  'autojump' \
   'prompt'
 
 #
