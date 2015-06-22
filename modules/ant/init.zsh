@@ -1,5 +1,5 @@
 export ANT_OPTS="-Xmx256m -Dant.logger.defaults=$HOME/.ant.logger"
-export ANT=$(which ant)
+export ANT=$(command -v ant)
 
 function antf() {
   # Black       0;30     Dark Gray     1;30
