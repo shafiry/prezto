@@ -38,6 +38,7 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'node' \
+  'ant' \
   'local' \
   'fzf' \
   'autojump' \
