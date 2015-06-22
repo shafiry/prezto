@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo -e ""
+
+echo -e "${COLOR_NC} COLOR_NC${COLOR_NC}"
+echo -e "${COLOR_LIGHT_BLUE} COLOR_LIGHT_BLUE${COLOR_NC}"
+echo -e "${COLOR_LIGHT_CYAN} COLOR_LIGHT_CYAN${COLOR_NC}"
+echo -e "${COLOR_LIGHT_GRAY} COLOR_LIGHT_GRAY${COLOR_NC}"
+echo -e "${COLOR_LIGHT_GREEN} COLOR_LIGHT_GREEN${COLOR_NC}"
+echo -e "${COLOR_LIGHT_PURPLE} COLOR_LIGHT_PURPLE${COLOR_NC}"
+echo -e "${COLOR_LIGHT_RED} COLOR_LIGHT_RED${COLOR_NC}"
+echo -e "${COLOR_BLACK} COLOR_BLACK${COLOR_NC}"
+echo -e "${COLOR_BLUE} COLOR_BLUE${COLOR_NC}"
+echo -e "${COLOR_BROWN} COLOR_BROWN${COLOR_NC}"
+echo -e "${COLOR_CYAN} COLOR_CYAN${COLOR_NC}"
+echo -e "${COLOR_GRAY} COLOR_GRAY${COLOR_NC}"
+echo -e "${COLOR_GREEN} COLOR_GREEN${COLOR_NC}"
+echo -e "${COLOR_PURPLE} COLOR_PURPLE${COLOR_NC}"
+echo -e "${COLOR_RED} COLOR_RED${COLOR_NC}"
+echo -e "${COLOR_WHITE} COLOR_WHITE${COLOR_NC}"
+echo -e "${COLOR_YELLOW} COLOR_YELLOW${COLOR_NC}"
+echo -e "${COLOR_BG_NC} COLOR_BG_NC${COLOR_NC}"
+echo -e "${COLOR_BG_LIGHT_GRAY} COLOR_BG_LIGHT_GRAY${COLOR_NC}"
+echo -e "${COLOR_BG_BLUE} COLOR_BG_BLUE${COLOR_NC}"
+echo -e "${COLOR_BG_CYAN} COLOR_BG_CYAN${COLOR_NC}"
+echo -e "${COLOR_BG_GREEN} COLOR_BG_GREEN${COLOR_NC}"
+echo -e "${COLOR_BG_PURPLE} COLOR_BG_PURPLE${COLOR_NC}"
+echo -e "${COLOR_BG_RED} COLOR_BG_RED${COLOR_NC}"
+echo -e "${COLOR_BG_YELLOW} COLOR_BG_YELLOW${COLOR_NC}"
+
+echo -e ""
+
+for line in {0..14}; do
+  for col in {0..17}; do
+    code=$(( $col * 15 + $line ));
+    printf $'\e[38;05;%dm %03d' $code $code
+  done
+  echo
+done
