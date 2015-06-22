@@ -1,8 +1,5 @@
 # vim aliases
 
-alias mivm='mvim'
-alias mvmi='mvim'
-alias vim='mvim -v'
 alias cdj='cd $(autojump -s | cut -f2 | fzf)'
 alias vimf='vim $(ag --hidden -l -g "" | fzf)'
 alias vimg='vim $(git ls-files | fzf)'
