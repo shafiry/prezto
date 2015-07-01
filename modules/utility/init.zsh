@@ -59,6 +59,8 @@ alias pu='pushd'
 alias rm="${aliases[rm]:-rm}"
 alias type='type -a'
 
+alias cdd='cd -'
+
 # ls
 if is-callable 'dircolors'; then
   # GNU Core Utilities
